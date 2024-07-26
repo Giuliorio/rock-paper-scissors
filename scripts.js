@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     const randomValue = Math.floor(Math.random() * (9) + 1);
     
