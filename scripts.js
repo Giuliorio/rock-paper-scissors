@@ -5,3 +5,19 @@ function getComputerChoice() {
     if (randomValue >= 7) return "Paper";
     return "Scissors";
 }
+
+function getHumanChoice() {
+    let userInput;
+    let isValidInput = false;
+    
+    do {
+        userInput = prompt("Rock Papers or Scissors?");
+        userInput = userInput.toLowerCase()
+
+        if (userInput === "rock") isValidInput = true;
+        if (userInput === "paper") isValidInput = true;
+        if (userInput === "scissors") isValidInput = true;
+    } while (isValidInput === false)
+
+    return userInput;
+}
