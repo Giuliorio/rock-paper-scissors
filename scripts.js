@@ -4,9 +4,9 @@ let computerScore = 0;
 function getComputerChoice() {
     const randomValue = Math.floor(Math.random() * (9) + 1);
     
-    if (randomValue <= 3) return "Rock";
-    if (randomValue >= 7) return "Paper";
-    return "Scissors";
+    if (randomValue <= 3) return "rock";
+    if (randomValue >= 7) return "paper";
+    return "scissors";
 }
 
 function getHumanChoice() {
@@ -23,4 +23,29 @@ function getHumanChoice() {
     } while (isValidInput === false)
 
     return userInput;
+}
+
+function playRound(humanChoice, computerChoice) {
+    const winMessage = "Great job, you won the round!"
+    const loseMessage = "Sorry, you lost the round :("
+
+    console.log(computerChoice)
+
+    const compareChoices = (winning, losing) => {
+        if(humanChoice === winning) {
+            if (computerChoice === losing) {
+                alert(winMessage);
+                humanScore++
+                return
+            }
+            alert(loseMessage)
+            computerScore++
+            return
+        }
+    }
+
+    if (humanChoice === computerChoice) return alert("Tie!");
+    compareChoices("rock", "scissors");
+    compareChoices("scissors", "paper");
+    compareChoices("paper", "rock");
 }
