@@ -63,5 +63,3 @@ function playGame() {
     if (humanScore === computerScore) alert(tieMessage);
     alert(humanScore > computerScore ? winMessage : loseMessage)
 }
-
-playGame()

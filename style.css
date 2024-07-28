@@ -1,0 +1,66 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow-x: none;
+    background-color: #424242;
+    color: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.display {
+    width: 250px;
+}
+
+.counters {
+    display: flex;
+    justify-content: space-between;
+}
+
+.message-wrapper {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.commands {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.commands > p {
+    align-self: center;
+    margin-bottom: 5px;
+}
+
+.buttons {
+    margin-top: 10px;
+    width: 225px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons > p {
+    margin-top: 0;
+    padding: 15px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: .5px solid #fafafa;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.buttons > p:hover {
+    background-color: #686868;
+}
