@@ -1,3 +1,11 @@
+const buttons = document.querySelectorAll(".button");
+const message = document.querySelector(".message");
+const playerScoreDisplay = document.querySelector(".player");
+const computerScoreDisplay = document.querySelector(".computer");
+
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     const randomValue = Math.floor(Math.random() * (9) + 1);
     
@@ -21,6 +29,7 @@ function getHumanChoice() {
 
     return userInput;
 }
+
 
 
 function playGame() {
@@ -63,3 +72,9 @@ function playGame() {
     if (humanScore === computerScore) alert(tieMessage);
     alert(humanScore > computerScore ? winMessage : loseMessage)
 }
+
+buttons.forEach((button, i) => {
+    button.addEventListener("click", (e) => {
+        const choice = e.currentTarget.classList[0]
+    })
+})
