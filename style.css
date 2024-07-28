@@ -16,17 +16,14 @@ body {
     align-items: center;
 }
 
-.display {
-    width: 250px;
-}
-
 .counters {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .message-wrapper {
     height: 50px;
+    width: 500px;
     display: flex;
     justify-content: center;
 }
