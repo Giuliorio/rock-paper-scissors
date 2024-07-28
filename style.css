@@ -63,4 +63,5 @@ body {
 
 .buttons > p:hover {
     background-color: #686868;
+    color: #292929;
 }
