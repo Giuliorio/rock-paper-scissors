@@ -43,46 +43,14 @@ const playRound = (humanChoice, computerChoice) => {
     compareChoices("paper", "rock");
 }
 
-function playGame() {
-    const gameLength = 5;
-
-    const winMessage = "Congrats you are the winner!";
-    const loseMessage = "I came out victorious!";
-    const tieMessage = "We're even this time!"
-
-    let humanScore = 0;
-    let computerScore = 0;
-    
-    const playRound = (humanChoice, computerChoice) => {
-        const winMessage = "Great job, you won the round!"
-        const loseMessage = "Sorry, you lost the round :("
-    
-        const compareChoices = (winning, losing) => {
-            if(humanChoice === winning) {
-                if (computerChoice === losing) {
-                    alert(winMessage);
-                    humanScore++
-                    return
-                }
-                alert(loseMessage)
-                computerScore++
-                return
-            }
-        }
-    
-        if (humanChoice === computerChoice) return alert("Tie!");
-        compareChoices("rock", "scissors");
-        compareChoices("scissors", "paper");
-        compareChoices("paper", "rock");
+setInterval(() => {
+    if (humanScore === 3) {
+        message.textContent = "Wow you beat me";
     }
-
-    for (let i = 0; i < gameLength; i++) {
-        playRound(getHumanChoice(), getComputerChoice());
+    if (computerScore === 3) {
+        message.textContent = "I came out Victorious!"
     }
-
-    if (humanScore === computerScore) alert(tieMessage);
-    alert(humanScore > computerScore ? winMessage : loseMessage)
-}
+}, 250)
 
 buttons.forEach((button, i) => {
     button.addEventListener("click", (e) => {
