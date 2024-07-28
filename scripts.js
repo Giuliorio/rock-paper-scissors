@@ -14,22 +14,6 @@ function getComputerChoice() {
     return "scissors";
 }
 
-function getHumanChoice() {
-    let userInput;
-    let isValidInput = false;
-    
-    do {
-        userInput = prompt("Rock Papers or Scissors?");
-        userInput = userInput.toLowerCase()
-
-        if (userInput === "rock") isValidInput = true;
-        if (userInput === "paper") isValidInput = true;
-        if (userInput === "scissors") isValidInput = true;
-    } while (isValidInput === false)
-
-    return userInput;
-}
-
 const playRound = (humanChoice, computerChoice) => {
     const winMessage = "Great job, you won the round!"
     const loseMessage = "Sorry, you lost the round :("
