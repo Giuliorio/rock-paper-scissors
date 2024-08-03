@@ -1,7 +1,7 @@
 body {
     height: 100vh;
     width: 100vw;
-    overflow-x: none;
+    overflow: hidden;
     background-color: #424242;
     color: #fafafa;
     display: flex;
@@ -46,7 +46,7 @@ body {
     justify-content: space-between;
 }
 
-.option {
+button {
     margin-top: 0;
     padding: 15px;
     font-size: 30px;
@@ -54,16 +54,19 @@ body {
     justify-content: center;
     align-items: center;
     border: .5px solid #fafafa;
-    border-radius: 50%;
     cursor: pointer;
     background-color: inherit;
     color: #fafafa;
 }
 
-.option:hover {
+button:hover {
     background-color: #686868;
     color: #292929;
     border: none;
+}
+
+.option {
+    border-radius: 50%;
 }
 
 .option:disabled, .option:disabled:hover {
@@ -71,4 +74,16 @@ body {
     background-color: inherit;
     border: 1px solid #686868;
     cursor: not-allowed;
+}
+
+.wrapper:has(.play-again) {
+    padding: 40px;
+}
+
+.play-again {
+    border-radius: 35px;
+}
+
+.hidden {
+    display: none;
 }

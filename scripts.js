@@ -2,6 +2,7 @@ const buttons = document.querySelectorAll(".option");
 const message = document.querySelector(".message");
 const playerScoreDisplay = document.querySelector(".player");
 const computerScoreDisplay = document.querySelector(".computer");
+const playAgain = document.querySelector(".play-again")
 
 let humanScore = 0;
 let computerScore = 0;
@@ -49,14 +50,20 @@ const endGame = () => {
         buttons.forEach(button => {
             button.setAttribute("disabled", true)
         })
-        
+
         const winMessage = "Wow you beat me"
         const loseMessage = "I came out Victorious!"
 
         message.textContent = humanScore > computerScore ? winMessage : loseMessage
 
+
+        playAgain.classList.remove("hidden")
     }
 }
+
+playAgain.addEventListener("click", () => {
+    window.location.reload()
+})
 
 buttons.forEach(button => {
     button.addEventListener("click", (e) => {
