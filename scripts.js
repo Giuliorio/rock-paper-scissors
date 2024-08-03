@@ -1,4 +1,4 @@
-const buttons = document.querySelectorAll(".button");
+const buttons = document.querySelectorAll(".option");
 const message = document.querySelector(".message");
 const playerScoreDisplay = document.querySelector(".player");
 const computerScoreDisplay = document.querySelector(".computer");
@@ -54,7 +54,7 @@ setInterval(() => {
 
 buttons.forEach((button, i) => {
     button.addEventListener("click", (e) => {
-        const choice = e.currentTarget.classList[0]
+        const choice = e.currentTarget.id
         playRound(choice, getComputerChoice())
     })
 })
