@@ -43,18 +43,25 @@ const playRound = (humanChoice, computerChoice) => {
     compareChoices("paper", "rock");
 }
 
-setInterval(() => {
-    if (humanScore === 3) {
-        message.textContent = "Wow you beat me";
-    }
-    if (computerScore === 3) {
-        message.textContent = "I came out Victorious!"
-    }
-}, 250)
+const endGame = () => {
 
-buttons.forEach((button, i) => {
+    if (humanScore === 3|| computerScore == 3) {
+        buttons.forEach(button => {
+            button.setAttribute("disabled", true)
+        })
+        
+        const winMessage = "Wow you beat me"
+        const loseMessage = "I came out Victorious!"
+
+        message.textContent = humanScore > computerScore ? winMessage : loseMessage
+
+    }
+}
+
+buttons.forEach(button => {
     button.addEventListener("click", (e) => {
         const choice = e.currentTarget.id
         playRound(choice, getComputerChoice())
+        endGame()
     })
 })
